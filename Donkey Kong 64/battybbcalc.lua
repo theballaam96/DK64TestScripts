@@ -5,16 +5,6 @@ reels = {
 	[4] = {"Pineapple", "GB", "Coconut", "GB", "Grape", "Watermelon"},
 };
 
--- Factory
---[[
-reels = {
-	[1] = {"Grape", "GB", "Pineapple", "Coconut", "GB", "Watermelon"},
-	[2] = {"Watermelon", "GB", "Pineapple", "GB", "Grape", "Coconut"},
-	[3] = {"Watermelon", "Coconut", "GB", "Pineapple", "Grape", "GB"},
-	[4] = {"Pineapple", "GB", "Coconut", "GB", "Grape", "Watermelon"},
-};
-]]--
-
 bestSlots = {
 	[1] = 0,
 	[2] = 0,
@@ -24,7 +14,32 @@ bestSlots = {
 
 winTarget = "GB";
 winPoints = 3;
-instaHitPossible = false;
+
+function startMessage()
+	print("Welcome to the Batty Barrel Bandit Calculator");
+	print("Developed by theballaam96");
+	print("----------");
+	print("To use, type setLevel('Factory'), setLevel('Isles') or setLevel('Galleon') into the Lua Console, then type calculateBestStart()");
+	print("The resulting output will be the best icons to start for that particular Batty Barrel Bandit");
+	print("----------");
+end
+
+startMessage();
+
+function setLevel(Level)
+	if Level == 'Factory' then
+		firstHits = {0,0,0}; -- Factory
+		print("Level set to Factory");
+	elseif Level == 'Isles' then
+		firstHits = {2,1,1}; -- Isles
+		print("Level set to Isles");
+	elseif Level == 'Galleon' then
+		firstHits = {0,1,1}; -- Galleon
+		print("Level set to Galleon");
+	else
+		print("Invalid input");
+	end
+end
 
 bestTotal = winPoints * (#reels[1] + #reels[2] + #reels[3] + #reels[4]);
 
@@ -46,13 +61,9 @@ function getWinSlots()
 	end
 end
 
-function getDistancesToWin(slotNumber, slotSelection)
+function getDistancesToWin(slotNumber, slotSelection, slotDelay)
 	distances = {};
-	if slotNumber == 1 and instaHitPossible then
-		comparisonSlotSelect = slotSelection - 1;
-	else
-		comparisonSlotSelect = slotSelection;
-	end
+	comparisonSlotSelect = slotSelection - 1 + slotDelay;
 	for i = 1, #reelWinSlots[slotNumber] do
 		if reelWinSlots[slotNumber][i] > comparisonSlotSelect then
 			distances[#distances + 1] = reelWinSlots[slotNumber][i] - slotSelection;
@@ -91,10 +102,10 @@ function getPointsOfCurrentSlotSelection(r1,r2,r3,r4)
 	start3 = r3;
 	start4 = r4;
 	for i = 1, winPoints do
-		distancesReel1 = getDistancesToWin(1, start1);
-		distancesReel2 = getDistancesToWin(2, start2);
-		distancesReel3 = getDistancesToWin(3, start3);
-		distancesReel4 = getDistancesToWin(4, start4);
+		distancesReel1 = getDistancesToWin(1, start1, firstHits[i]);
+		distancesReel2 = getDistancesToWin(2, start2, 1);
+		distancesReel3 = getDistancesToWin(3, start3, 1);
+		distancesReel4 = getDistancesToWin(4, start4, 1);
 		
 		distanceSelectedReel1 = distancesReel1[1];
 		distanceSelectedReel2 = getLowestNumberInArrayAboveValue(distancesReel2, distanceSelectedReel1);
@@ -111,49 +122,53 @@ function getPointsOfCurrentSlotSelection(r1,r2,r3,r4)
 end
 
 function calculateBestStart()
-	getWinSlots();
-	matchCases = {};
-	for reel1 = 1, #reels[1] do
-		for reel2 = 1, #reels[2] do
-			for reel3 = 1, #reels[3] do
-				for reel4 = 1, #reels[4] do
-					reel1Prog = reel1;
-					reel2Prog = reel2;
-					reel3Prog = reel3;
-					reel4Prog = reel4;
-					points = getPointsOfCurrentSlotSelection(reel1, reel2, reel3, reel4);
-					if points < bestTotal then
-						bestSlots = {
-							[1] = reel1,
-							[2] = reel2,
-							[3] = reel3,
-							[4] = reel4,
-						};
-						bestTotal = points;
-						matchCases = {
-							[1] = {reel1, reel2, reel3, reel4};
-						};
-					elseif points == bestTotal then
-						matchCases[#matchCases + 1] = {reel1, reel2, reel3, reel4};
+	if firstHits == nil then
+		print("No level selected, aborted function");
+	else
+		getWinSlots();
+		matchCases = {};
+		for reel1 = 1, #reels[1] do
+			for reel2 = 1, #reels[2] do
+				for reel3 = 1, #reels[3] do
+					for reel4 = 1, #reels[4] do
+						reel1Prog = reel1;
+						reel2Prog = reel2;
+						reel3Prog = reel3;
+						reel4Prog = reel4;
+						points = getPointsOfCurrentSlotSelection(reel1, reel2, reel3, reel4);
+						if points < bestTotal then
+							bestSlots = {
+								[1] = reel1,
+								[2] = reel2,
+								[3] = reel3,
+								[4] = reel4,
+							};
+							bestTotal = points;
+							matchCases = {
+								[1] = {reel1, reel2, reel3, reel4};
+							};
+						elseif points == bestTotal then
+							matchCases[#matchCases + 1] = {reel1, reel2, reel3, reel4};
+						end
 					end
 				end
 			end
 		end
-	end
-	print("BEST SLOT STARTS");
-	for i = 1, #reels do
-		print("Reel "..i..": "..reels[i][bestSlots[i]].." ("..bestSlots[i]..")");
-	end
-	print("");
-	print("Number of Matches: "..#matchCases);
-	print("");
-	if #matchCases > 1 then
-		for i = 2, #matchCases do
-			print("MATCH #"..(i-1))
-			for j = 1, #reels do
-				print("Reel "..j..": "..reels[j][matchCases[i][j]].." ("..matchCases[i][j]..")");
+		print("BEST SLOT STARTS");
+		for i = 1, #reels do
+			print("Reel "..i..": "..reels[i][bestSlots[i]].." ("..bestSlots[i]..")");
+		end
+		print("");
+		print("Number of Matches: "..#matchCases);
+		print("");
+		if #matchCases > 1 then
+			for i = 2, #matchCases do
+				print("MATCH #"..(i-1))
+				for j = 1, #reels do
+					print("Reel "..j..": "..reels[j][matchCases[i][j]].." ("..matchCases[i][j]..")");
+				end
+				print("");
 			end
-			print("");
 		end
 	end
 end
