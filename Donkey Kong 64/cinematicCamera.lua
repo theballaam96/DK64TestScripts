@@ -210,8 +210,8 @@ function cameraPan(duration_frames)
 	parameters.cameraAngle.per_frame = (parameters.cameraAngle.finish - parameters.cameraAngle.start) / duration_frames;
 	parameters.cameraTrackingAngle.per_frame = (parameters.cameraTrackingAngle.finish - parameters.cameraTrackingAngle.start) / duration_frames;
 	print("STARTING CAMERA PAN");
-	duration_seconds = math.floor(duration_frames * 100) / 100;
-	print("Duration: "..duration_frames.." frames ("..duration_seconds..")");
+	duration_seconds = math.floor((duration_frames / 60) * 100) / 100;
+	print("Duration: "..duration_frames.." frames ("..duration_seconds.." seconds)");
 end
 
 function performPan()
@@ -237,6 +237,7 @@ function performPan()
 		if time_reference == parameters.duration then
 			parameters.camera_panning = false;
 			print("ENDING CAMERA PAN");
+			print("");
 		end
 	else
 		set_invisify(1)
