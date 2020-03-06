@@ -59,4 +59,12 @@ function shiftCamera()
 	end
 end
 
+function changeChunk(value)
+	weird_object = mainmemory.read_u32_be(0x7FC924);
+	if weird_object > 0x7FFFFFFF and weird_object < 0x80800000 then
+		weird_object = weird_object - 0x80000000;
+		mainmemory.write_u16_be(weird_object + 0x290, value);
+	end
+end
+
 event.onframestart(shiftCamera, "Shifts Camera")
