@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> Map Lookup </title>
+  <link rel="stylesheet" href="style.css">
+<script>
+	function searchGlitch() {
+		var input, filter, ul, li, a, i, cap, resamt;
+		input = document.getElementById('searchInput');
+		filter = input.value.toUpperCase();
+		ul = document.getElementById("searchUL");
+		li = ul.getElementsByTagName('li');
+		document.getElementById("resultamount").value = "";
+		resamt = 0;
+		
+		if (document.getElementById('searchInput').value.length == 0) {
+			cap = 0;
+		} else {
+			cap = 5;
+			document.getElementById("resultamount").value = "0 results found";
+		}
+		
+		for (i = 0; i < li.length; i++) {
+			a = li[i].getElementsByTagName("a")[0];
+			if (a.innerHTML.toUpperCase().indexOf(filter) > -1 && cap > 0) {
+				li[i].style.display = "";
+				cap = cap-1;
+				resamt = resamt + 1;
+				document.getElementById('resultamount').value = resamt + " results found";
+			} else {
+				li[i].style.display = "none";
+				if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+					resamt = resamt + 1;
+				}
+				document.getElementById('resultamount').value = resamt + " results found";
+			}
+		}
+	}
+</script>
+
+</head>
+
+<body onload="searchGlitch();">
+	<h1>
+		<div align="center">
+			<a href="main.html">
+				<img src="logo.png" alt="main_logo" height="120" width="194">
+			</a>
+				<br>
+			<font size="6" color="white">
+			Map Lookup
+			</font>
+		</div>
+	</h1>
+	
+	<nav align="center" class="nav">
+		<div align="center">
+			<a href="search.html">
+				<button class="btn">
+					<font size="3" color="white" align="left">
+					SEARCH
+					</font>
+				</button>
+			</a>
+			
+			<div class="dropdown">
+				<button class="dropbtn">
+					<font size="3" color="white" align="left">
+					MAIN GLITCHES
+					</font>
+				</button>
+				<div class="dropdown-content">
+					<font size="3" color="white">
+					<a href="http://www.youtube.com/user/IntroStoryGlitch">INTRO STORY GLITCH</a>
+					<a href="tag barrel storage.html">TAG BARREL STORAGE</a>
+					<a href="http://www.youtube.com/watch?v=rT5BwCjg1EU">MOONKICKS</a>
+					<a href="http://www.youtube.com/watch?v=NcvaFmXg0Iw">STVW & PHASING</a>
+					<a href="http://www.youtube.com/watch?v=1z7zsMCr75U">LAG ABUSE</a>
+					<a href="main glitches.html">SEE ALL</a>
+					</font>
+				</div>
+			</div>
+			
+			<a href="http://www.speedrun.com/dk64">
+				<button class="btn">
+					<font size="3" color="white" align="left">
+						SPEEDRUN.COM
+					</font>
+				</button>
+			</a>
+		</div>
+	</nav>
+	
+<div class="transbox">
+	<div align="center">
+		<h1>
+			<font size="5" color="white">
+				Map Search
+			</font>
+		</h1>
+			<input type="text" id="searchInput" onkeyup="searchGlitch()" placeholder="Search.. ">
+			<ul id="searchUL">
+				<li><a href="#"><div align="left">0x00 - Test Map <p hidden> </p></div></a></li>	
+				<li><a href="#"><div align="left">0x01 - Funky's Armory <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0x02 - DK Arcade <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x03 - Hideout Helm: Lanky's Maze <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x04 - Jungle Japes: Mountain <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x05 - Cranky's Lab <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x06 - Jungle Japes: Minecart Ride <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x07 - Jungle Japes <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x08 - Jungle Japes: Army Dillo <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x09 - Jetpac <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x0A - Kremling Kosh (Very Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x0B - Stealthy Snoop (Normal, No Logo) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x0C - Jungle Japes: Shell <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x0D - Jungle Japes: Painting Room <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x0E - Angry Aztec: Beetle Race <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x0F - Snide's HQ <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x10 - Angry Aztec: Tiny Temple <p hidden> </p></div></a></li>	
+				<li><a href="#"><div align="left">0x11 - Hideout Helm <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0x12 - Teetering Turtle Trouble (Very Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x13 - Angry Aztec: DK 5DT <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x14 - Llama Temple <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x15 - Angry Aztec: Diddy 5DT <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x16 - Angry Aztec: Tiny 5DT <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x17 - Angry Aztec: Lanky 5DT <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x18 - Angry Aztec: Chunky 5DT <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x19 - Candy's Music Shop <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x1A - Frantic Factory <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x1B - Frantic Factory: Car Race <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x1C - Hideout Helm: Level Intros/Game Over <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x1D - Frantic Factory: Power Shed <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x1E - Gloomy Galleon <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x1F - Gloomy Galleon: K Rool's Ship <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x20 - Batty Barrel Bandit (Easy) <p hidden> </p></div></a></li>	
+				<li><a href="#"><div align="left">0x21 - Jungle Japes: Underground <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0x22 - DK Isles <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x23 - Hideout Helm: DK's Targets Game <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x24 - Frantic Factory: Crusher Room <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x25 - Jungle Japes: Baboon Blast <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x26 - Angry Aztec <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x27 - Gloomy Galleon: Seal Race <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x28 - Nintendo Logo <p hidden> </p></div></a></li>	
+				<li><a href="#"><div align="left">0x29 - Angry Aztec: Baboon Blast <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x2A - Troff 'n' Scoff <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x2B - Gloomy Galleon: Diddy/Lanky/Chunky 5DS <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x2C - Gloomy Galleon: Treasure Chest <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x2D - Gloomy Galleon: Mermaid Palace <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x2E - Gloomy Galleon: DK/Tiny 5DS <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x2F - Gloomy Galleon: 2DS <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x30 - Fungi Forest <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x31 - Gloomy Galleon: Lighthouse <p hidden> </p></div></a></li>	
+				<li><a href="#"><div align="left">0x32 - Hideout Helm: Tiny's Mushroom Game <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0x33 - Gloomy Galleon: Mechanical Fish <p hidden>Mech Fish </p></div></a></li>		
+				<li><a href="#"><div align="left">0x34 - Fungi Forest: Ant Hill <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x35 - Jungle Japes: Crown (Beaver Brawl) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x36 - Gloomy Galleon: Baboon Blast <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x37 - Fungi Forest: Minecart Ride <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x38 - Fungi Forest: Dark Attic <p hidden>Diddy's Barn </p></div></a></li>		
+				<li><a href="#"><div align="left">0x39 - Fungi Forest: Winch Room <p hidden>Diddy's Attic </p></div></a></li>		
+				<li><a href="#"><div align="left">0x3A - Fungi Forest: Lanky's Attic <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x3B - Fungi Forest: DK's Barn <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x3C - Fungi Forest: Spider <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x3D - Fungi Forest: Mill (Front) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x3E - Fungi Forest: Mill (Rear) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x3F - Fungi Forest: Lanky's Mushroom Puzzle <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x40 - Fungi Forest: Giant Mushroom <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x41 - Stealthy Snoop (Normal) <p hidden> </p></div></a></li>	
+				<li><a href="#"><div align="left">0x42 - Mad Maze Maul (Hard) <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0x43 - Stash Snatch (Normal) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x44 - Mad Maze Maul (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x45 - Mad Maze Maul (Normal) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x46 - Fungi Forest: Lanky's Mushroom Bounce <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x47 - Fungi Forest: Face Puzzle <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x48 - Crystal Caves <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x49 - Angry Aztec: Crown (Kritter Karnage) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x4A - Stash Snatch (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x4B - Stash Snatch (Hard) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x4C - DK Rap <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x4D - Minecart Mayhem (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x4E - Busy Barrel Barrage (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x4F - Busy Barrel Barrage (Normal) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x50 - Main Menu <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x51 - Title Screen (NFR Version) <p hidden>Not for Resale </p></div></a></li>	
+				<li><a href="#"><div align="left">0x52 - Crystal Caves: Beetle Race <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0x53 - Fungi Forest: Dogadon <p hidden>Dogadon 2 </p></div></a></li>		
+				<li><a href="#"><div align="left">0x54 - Crystal Caves: Tiny 5DI <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x55 - Crystal Caves: Lanky 5DI <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x56 - Crystal Caves: DK 5DI <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x57 - Creepy Castle <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x58 - Creepy Castle: Ballroom <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x59 - Crystal Caves: Rotating Room <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x5A - Crystal Caves: Chunky 5DC <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x5B - Crystal Caves: DK 5DC <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x5C - Crystal Caves: Diddy Lower 5DC (Enemies) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x5D - Crystal Caves: Tiny 5DC <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x5E - Crystal Caves: 1DC <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x5F - Crystal Caves: Chunky 5DI <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x60 - Splish Splash Salvage (Normal) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x61 - K. Lumsy <p hidden>K.Lumsy K-Lumsy </p></div></a></li>	
+				<li><a href="#"><div align="left">0x62 - Crystal Caves: Ice Castle <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0x63 - Speedy Swing Sortie (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x64 - Crystal Caves: Diddy 5DI <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x65 - Krazy Kong Klamour (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x66 - Big Bug Bash (Very Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x67 - Searchlight Seek (Very Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x68 - Beaver Bother (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x69 - Creepy Castle: Wind Tower <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x6A - Creepy Castle: Minecart <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x6B - Multiplayer: Battle Arena <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x6C - Creepy Castle: Lanky/Tiny Crypt <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x6D - Multiplayer: Map 1 <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x6E - Frantic Factory: Baboon Blast <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x6F - Gloomy Galleon: Pufftoss <p hidden>Puftoss </p></div></a></li>		
+				<li><a href="#"><div align="left">0x70 - Creepy Castle: DK/Diddy/Chunky Crypt <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x71 - Creepy Castle: Museum <p hidden> </p></div></a></li>	
+				<li><a href="#"><div align="left">0x72 - Creepy Castle: Library <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0x73 - Kremling Kosh (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x74 - Kremling Kosh (Normal) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x75 - Kremling Kosh (Hard) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x76 - Teetering Turtle Trouble (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x77 - Teetering Turtle Trouble (Normal) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x78 - Teetering Turtle Trouble (Hard) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x79 - Batty Barrel Bandit (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x7A - Batty Barrel Bandit (Normal) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x7B - Batty Barrel Bandit (Hard) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x7C - Mad Maze Maul (Insane) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x7D - Stash Snatch (Insane) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x7E - Stealthy Snoop (Very Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x7F - Stealthy Snoop (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x80 - Stealthy Snoop (Hard) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x81 - Minecart Mayhem (Normal) <p hidden> </p></div></a></li>	
+				<li><a href="#"><div align="left">0x82 - Minecart Mayhem (Hard) <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0x83 - Busy Barrel Barrage (Hard) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x84 - Splish Splash Salvage (Hard) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x85 - Splish Splash Salvage (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x86 - Speedy Swing Sortie (Normal) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x87 - Speedy Swing Sortie (Hard) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x88 - Beaver Bother (Normal) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x89 - Beaver Bother (Hard) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x8A - Searchlight Seek (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x8B - Searchlight Seek (Normal) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x8C - Searchlight Seek (Hard) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x8D - Krazy Kong Klamour (Normal) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x8E - Krazy Kong Klamour (Hard) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x8F - Krazy Kong Klamour (Insane) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x90 - Peril Path Panic (Very Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x91 - Peril Path Panic (Easy) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x92 - Peril Path Panic (Normal) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x93 - Peril Path Panic (Hard) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x94 - Big Bug Bash (Easy) <p hidden> </p></div></a></li>	
+				<li><a href="#"><div align="left">0x95 - Big Bug Bash (Normal) <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0x96 - Big Bug Bash (Hard) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x97 - Creepy Castle: Tunnel <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x98 - Hideout Helm: Intro Story <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x99 - DK Isles: Intro Story <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x9A - Frantic Factory: Mad Jack <p hidden>MJ </p></div></a></li>		
+				<li><a href="#"><div align="left">0x9B - Frantic Factory: Crown (Arena Ambush) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x9C - Gloomy Galleon: Crown (More Kritter Karnage) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x9D - DK Isles: Fungi Lobby Crown (Forest Fracas) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x9E - DK Isles: Snide's Room Crown (Bish Bash Brawl) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0x9F - Fungi Forest: Crown (Kamikaze Kremlings) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xA0 - Crystal Caves: Crown (Plinth Panic) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xA1 - Creepy Castle: Crown (Pinnacle Palaver) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xA2 - Hideout Helm: Crown (Shockwave Showdown) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xA3 - Creepy Castle: Dungeon <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xA4 - Creepy Castle: Tree <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xA5 - Hideout Helm: Diddy's Kremling Game <p hidden> </p></div></a></li>	
+				<li><a href="#"><div align="left">0xA6 - Creepy Castle: Shed <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0xA7 - Creepy Castle: Trash Can <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xA8 - Creepy Castle: Greenhouse <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xA9 - DK Isles: Jungle Japes Lobby <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xAA - DK Isles: Hideout Helm Lobby <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xAB - DK Isles: DK's Treehouse <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xAC - DK Isles: Rock (Intro Story) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xAD - DK Isles: Angry Aztec Lobby <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xAE - DK Isles: Gloomy Galleon Lobby <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xAF - DK Isles: Frantic Factory Lobby <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xB0 - DK Isles: Training Grounds <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xB1 - DK Isles: Dive Barrel <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xB2 - DK Isles: Fungi Forest Lobby <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xB3 - Gloomy Galleon: Submarine <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xB4 - DK Isles: Orange Barrel <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xB5 - DK Isles: Barrel Barrel <p hidden> </p></div></a></li>	
+				<li><a href="#"><div align="left">0xB6 - DK Isles: Vine Barrel <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0xB7 - Creepy Castle: Crypt <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xB8 - Enguarde Arena <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xB9 - Creepy Castle: Car Race <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xBA - Crystal Caves: Baboon Blast <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xBB - Creepy Castle: Baboon Blast <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xBC - Fungi Forest: Baboon Blast <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xBD - DK Isles: Banana Fairy Island <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xBE - Multiplayer: Map 2 <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xBF - Rambi Arena <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xC0 - Multiplayer: Map 3 <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xC1 - DK Isles: Creepy Castle Lobby <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xC2 - DK Isles: Crystal Caves Lobby <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xC3 - DK Isles: Snide's Room <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xC4 - Crystal Caves: Army Dillo <p hidden>Army Dillo 2 </p></div></a></li>		
+				<li><a href="#"><div align="left">0xC5 - Angry Aztec: Dogadon <p hidden> </p></div></a></li>	
+				<li><a href="#"><div align="left">0xC6 - DK Isles: Training Grounds (End Sequence) <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0xC7 - Creepy Castle: Kut Out <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xC8 - Crystal Caves: Diddy Upper 5DC (Candles) <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xC9 - Hideout Helm: Diddy's Rocketbarrel Game <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xCA - Hideout Helm: Lanky's Shooting Game <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xCB - K Rool: DK Phase <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xCC - K Rool: Diddy Phase <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xCD - K Rool: Lanky Phase <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xCE - K Rool: Tiny Phase <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xCF - K Rool: Chunky Phase <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xD0 - Bloopers <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xD1 - Hideout Helm: Chunky's Kremling Game <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xD2 - Hideout Helm: Tiny's Pony Tail Twirl Game <p hidden>Tiny's PTT Game </p></div></a></li>		
+				<li><a href="#"><div align="left">0xD3 - Hideout Helm: Chunky's Shooting Game <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xD4 - Hideout Helm: DK's Rambi Game <p hidden> </p></div></a></li>		
+				<li><a href="#"><div align="left">0xD5 - K. Lumsy Ending <p hidden> </p></div></a></li>	
+				<li><a href="#"><div align="left">0xD6 - K Rool: Tiny Phase (Shoe) <p hidden> </p></div></a></li>			
+				<li><a href="#"><div align="left">0xD7 - K Rool: Arena <p hidden> </p></div></a></li>		
+			</ul>
+	</div>
+</div>
+
+<div align="right">
+	<font size="3" color="white">
+		<p id="resultamount"></p>
+	</font>
+</div>
+
+</body>
+
+<footer class="foot">
+	<font size="3" color="white">
+		Donkey Kong 64 
+			&copy;
+		1999, Nintendo
+	</font>
+</footer>
+</html>

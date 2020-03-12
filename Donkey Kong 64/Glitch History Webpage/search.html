@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> Search </title>
+  <link rel="stylesheet" href="style.css">
+<script>
+	function searchGlitch() {
+		var input, filter, ul, li, a, i, cap;
+		input = document.getElementById('searchInput');
+		filter = input.value.toUpperCase();
+		ul = document.getElementById("searchUL");
+		li = ul.getElementsByTagName('li');
+		
+		if (document.getElementById('searchInput').value.length == 0) {
+			cap = 0;
+		} else {
+			cap = 4;
+		}
+		
+		for (i = 0; i < li.length; i++) {
+			a = li[i].getElementsByTagName("a")[0];
+			if (a.innerHTML.toUpperCase().indexOf(filter) > -1 && cap > 0) {
+				li[i].style.display = "";
+				cap = cap-1;
+			} else {
+				li[i].style.display = "none";
+			}
+		}
+	}
+</script>
+
+</head>
+
+<body onload="searchGlitch();">
+	<h1>
+		<div align="center">
+			<a href="main.html">
+				<img src="logo.png" alt="main_logo" height="120" width="194">
+			</a>
+				<br>
+			<font size="6" color="white">
+			Search
+			</font>
+		</div>
+	</h1>
+	
+	<nav align="center" class="nav">
+		<div align="center">
+			<a href="search.html">
+				<button class="btn">
+					<font size="3" color="white" align="left">
+					SEARCH
+					</font>
+				</button>
+			</a>
+			
+			<div class="dropdown">
+				<button class="dropbtn">
+					<font size="3" color="white" align="left">
+					MAIN GLITCHES
+					</font>
+				</button>
+				<div class="dropdown-content">
+					<font size="3" color="white">
+					<a href="http://www.youtube.com/user/IntroStoryGlitch">INTRO STORY GLITCH</a>
+					<a href="tag barrel storage.html">TAG BARREL STORAGE</a>
+					<a href="http://www.youtube.com/watch?v=rT5BwCjg1EU">MOONKICKS</a>
+					<a href="http://www.youtube.com/watch?v=NcvaFmXg0Iw">STVW & PHASING</a>
+					<a href="http://www.youtube.com/watch?v=1z7zsMCr75U">LAG ABUSE</a>
+					<a href="main glitches.html">SEE ALL</a>
+					</font>
+				</div>
+			</div>
+			
+			<a href="http://www.speedrun.com/dk64">
+				<button class="btn">
+					<font size="3" color="white" align="left">
+						SPEEDRUN.COM
+					</font>
+				</button>
+			</a>
+		</div>
+	</nav>
+	
+<div class="transbox">
+	<div align="center">
+		<h1>
+			<font size="5" color="white">
+				Search for a glitch
+			</font>
+		</h1>
+			<input type="text" id="searchInput" onkeyup="searchGlitch()" placeholder="Search.. ">
+			<ul id="searchUL">
+			  <li><a href="#"><div align="left">Tag Barrel Storage <p hidden>TBS</p></div></a></li>
+			  <li><a href="#"><div align="left">Intro Story Glitch <p hidden>ISG</p></div></a></li>
+			  <li><a href="#"><div align="left">Orange Clip <p hidden>oclips</p></div></a></li>
+			  <li><a href="#"><div align="left">Ledge Clip</div></a></li>
+			  <li><a href="#"><div align="left">Phase Walking <p hidden>WTVW</p></div></a></li>
+			  <li><a href="#"><div align="left">Skew</div></a></li>
+			  <li><a href="#"><div align="left">Spawn Snagging</div></a></li>
+			  <li><a href="lob-jaearlymethods.html"><div align="left">Methods of Jungle Japes Lobby Early <p hidden>Jungle Japes Early</p></div></a></li>
+			  <li><a href="lob-azearlymethods.html"><div align="left">Methods of Angry Aztec Lobby Early <p hidden>Angry Aztec Early</p></div></a></li>
+			  <li><a href="lob-faearlymethods.html"><div align="left">Methods of Frantic Factory Lobby Early <p hidden>Frantic Factory Early</p></div></a></li>
+			  <li><a href="lob-gaearlymethods.html"><div align="left">Methods of Gloomy Galleon Lobby Early <p hidden>Gloomy Galleon Early</p></div></a></li>
+			  <li><a href="lob-funearlymethods.html"><div align="left">Methods of Fungi Forest Lobby Early <p hidden>Fungi Forest Early Fungi Early Fungi Lobby Early</p></div></a></li>
+			  <li><a href="lob-cavearlymethods.html"><div align="left">Methods of Crystal Caves Lobby Early <p hidden>Crystal Caves Early</p></div></a></li>
+			  <li><a href="lob-casearlymethods.html"><div align="left">Methods of Creepy Castle Lobby Early <p hidden>Creepy Castle Early</p></div></a></li>
+			  <li><a href="lob-heearlymethods.html"><div align="left">Methods of Hideout Helm Lobby Early <p hidden>Hideout Helm Early Blast-O-Matic Kick BoM Kick Blast O Matic Kick</p></div></a></li>			  
+			</ul>
+	</div>
+</div>
+</body>
+
+<footer class="foot">
+	<font size="3" color="white">
+		Donkey Kong 64 
+			&copy;
+		1999, Nintendo
+	</font>
+</footer>
+</html>

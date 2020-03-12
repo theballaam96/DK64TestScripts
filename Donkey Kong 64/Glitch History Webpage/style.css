@@ -1,0 +1,170 @@
+	body {
+		font-family: Trebuchet MS;
+		height: 200px;
+		width: 99%;
+		background-image: url("header.png");
+		background-color: #93B874;
+	}
+
+	.header {
+		line-height: 80%;
+		margin-left: 10px;
+		height: 200px;
+		width: 99%;
+
+	}
+
+	.dropbtn {	
+		background-color: rgba(0,0,0,0);	
+		border: none;
+		cursor: pointer;
+	}
+	
+	.dropbtn:hover {
+		background-color: rgba(255,255,255,0.2);	
+	}
+	
+	.dropdown {
+		position: relative;
+		display: inline-block;
+		}
+	
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-image: url("wood-text2.png");
+		background-color: #003B73;
+		min-width: 100%
+		overflow:auto
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+	
+	.dropdown-content a {
+		color: white;
+		padding: 0px 12px;
+		text-decoration: none;
+		display: block;
+	}
+	
+	.dropdown-content a:hover {
+		background-color: rgba(255,255,255,0.15);
+	}
+	
+	.dropdown:hover .dropdown-content {
+		display: block
+	}
+	
+	.dropdown:hover .dropbtn{
+		background-color: rgba(255,255,255,0.2);
+	}
+	
+	.btn {
+		border-width:0px 0;
+		background-color: rgba(0,0,0,0);	
+	}
+	
+	.btn:hover {
+		background-color: rgba(255,255,255,0.2);	
+	}
+	
+	.nav {
+		border-width:0px 0;
+		margin:0;
+		padding:4px;
+		background-image: url("wood-text.png");
+		background-color:#A19895;
+	}
+	
+	div.transbox {
+		background-color: #A6A6A6;
+		padding: 12px;
+		opacity: 0.9;
+		filter: alpha(opacity=90);
+	}
+	
+	a {
+		color: white;
+		text-decoration: none;
+	}
+	
+	a:hover {
+		color: #E3E3E3;
+	}
+	
+	.foot {
+		border-width:0px 0;
+		margin:0;
+		padding:4px;
+		background-color:#A19895;
+		position: fixed;
+		bottom: 0;
+		opacity: 0.8;
+		filter: alpha(opacity=80);
+	}
+	
+	input[type=text] {
+		width: 532px;
+	}
+	
+	#searchInput {
+		background-image: url("search.png");
+		background-position: 10px 12px;
+		background-repeat: no-repeat;
+		font-size: 16px;
+		padding: 12px 20px 12px 40px;
+		border: 0px solid #ddd;
+		margin-bottom: 0px;
+	}
+
+	#searchUL {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		width: 593px
+	}
+
+	#searchUL li a {
+		border: 1px solid #ddd;
+		margin-top: -1px;
+		background-color: #f6f6f6;
+		padding: 10px;
+		text-decoration: none;
+		font-size: 18px;
+		color: black;
+		display: block;
+	}
+	
+	th, td {
+		padding: 15px;
+		vertical-align:top;
+	}
+	
+	div.titletransbox {
+		background-color: #A19895;
+		padding: 4px;
+		opacity: 0.9;
+		filter: alpha(opacity=90);
+	}
+	
+	.tooltip {
+		position: relative;
+		display: inline-block;
+	}
+	
+	.tooltip .tooltiptext {
+		visibility:hidden;
+		width: 360px;
+		bottom: 100%;
+		left: 50%;
+		background-color: #f6f6f6;
+		color: #000;
+		text-align: left;
+		padding: 5px 5px;
+		position: absolute;
+		z-index: 1;
+	}
+	
+	.tooltip:hover .tooltiptext {
+		visibility: visible;
+	}
